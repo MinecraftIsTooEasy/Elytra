@@ -16,11 +16,6 @@ public class ItemElytra extends ItemArmor {
     }
 
     @Override
-    public int getColorFromItemStack(ItemStack stack, int pass) {
-        return -1;
-    }
-
-    @Override
     public int getNumComponentsForDurability() {
         return 8;
     }
@@ -33,6 +28,24 @@ public class ItemElytra extends ItemArmor {
     @Override
     public Item getRepairItem() {
         return Item.leather;
+    }
+
+    @Override
+    public boolean hasColor(ItemStack stack) {
+        return getColorStatic(stack) != -1;
+    }
+
+    @Override
+    public int getColor(ItemStack stack) {
+        return getColorStatic(stack);
+    }
+
+    public static int getColorStatic(ItemStack stack) {
+        if (stack == null || !stack.hasTagCompound()) return -1;
+        NBTTagCompound nbt = stack.getTagCompound();
+        if (!nbt.hasKey("display")) return -1;
+        NBTTagCompound display = nbt.getCompoundTag("display");
+        return display.hasKey("color") ? display.getInteger("color") : -1;
     }
 
     public static final DamageSource flyIntoWall = DamageSource.inWall;
