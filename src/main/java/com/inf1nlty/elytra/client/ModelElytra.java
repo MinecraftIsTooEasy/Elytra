@@ -11,31 +11,42 @@ public class ModelElytra extends ModelBase {
         this.textureWidth = 64;
         this.textureHeight = 32;
 
-        // Right
         this.rightWing = new ModelRenderer(this, 22, 0);
         this.rightWing.mirror = true;
         this.rightWing.addBox(0.0F, 0.0F, 0.0F, 10, 20, 2, 1.0F);
         this.rightWing.setRotationPoint(-5.0F, 0.0F, 0.0F);
-        this.rightWing.rotateAngleX = 0.2617994F;
-        this.rightWing.rotateAngleZ = 0.2617994F;
 
-        // Left
         this.leftWing = new ModelRenderer(this, 22, 0);
         this.leftWing.addBox(-10.0F, 0.0F, 0.0F, 10, 20, 2, 1.0F);
         this.leftWing.setRotationPoint(5.0F, 0.0F, 0.0F);
-        this.leftWing.rotateAngleX = 0.2617994F;
-        this.leftWing.rotateAngleZ = -0.2617994F;
     }
 
-    public void setupAnim(boolean flying, boolean crouching) {
+    public void setupAnim(boolean flying, boolean crouching, float pitch) {
         float xRot = 0.2617994F;
         float zRot = -0.2617994F;
         float yOffset = 0.0F;
         float yRot = 0.0F;
 
         if (flying) {
+
             xRot = 0.34906584F;
             zRot = (float)(-Math.PI / 2.0);
+
+            if (pitch > 0.0F) {
+                float pitchRad = pitch * ((float)Math.PI / 180F);
+                float diveFactor = Math.min(pitchRad / (float)(Math.PI / 2.0), 1.0F);
+
+                xRot += diveFactor * 0.52F;
+                zRot = (float)(-Math.PI / 2.0) + diveFactor * 0.87F;
+            }
+
+            else if (pitch < 0.0F) {
+                float pitchRad = -pitch * ((float)Math.PI / 180F);
+                float climbFactor = Math.min(pitchRad / (float)(Math.PI / 4.0), 1.0F);
+
+                xRot -= climbFactor * 0.17F;
+                zRot = (float)(-Math.PI / 2.0) - climbFactor * 0.26F;
+            }
         } else if (crouching) {
             xRot = 0.6981317F;
             zRot = (float)(-Math.PI / 4.0);

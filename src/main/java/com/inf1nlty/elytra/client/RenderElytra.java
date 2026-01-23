@@ -19,7 +19,6 @@ public class RenderElytra {
         if (chest == null || !(chest.getItem() instanceof ItemElytra)) return;
 
         GL11.glPushMatrix();
-
         GL11.glEnable(GL11.GL_BLEND);
         GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
 
@@ -39,8 +38,9 @@ public class RenderElytra {
 
         boolean flying = ElytraPhysics.getElytraFlying(player);
         boolean crouching = player.isSneaking();
+        float pitch = player.rotationPitch;
 
-        MODEL.setupAnim(flying, crouching);
+        MODEL.setupAnim(flying, crouching, pitch);
         MODEL.render(0.0625F);
 
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
