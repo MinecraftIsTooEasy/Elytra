@@ -6,11 +6,11 @@
   "mixins": [
     "accessor.EntityAccessor",
     "accessor.NetServerHandlerAccessor",
+    "item.ItemFireworkMixin",
+    "entity.EntityDragonMixin",
     "entity.EntityFireworkRocketMixin",
     "entity.EntityPlayerMixin",
-
     "inventory.SlotRepairOrEnchantConsumableMixin",
-    "item.ItemFireworkMixin",
     "network.NetServerHandlerMixin"
   ],
   "client": [
