@@ -1,6 +1,7 @@
 package com.inf1nlty.elytra.mixin.client;
 
 import com.inf1nlty.elytra.client.ElytraClientHandler;
+
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 

@@ -16,6 +16,11 @@ public class ItemElytra extends ItemArmor {
     }
 
     @Override
+    public int getColorFromItemStack(ItemStack stack, int pass) {
+        return -1;
+    }
+
+    @Override
     public int getNumComponentsForDurability() {
         return 8;
     }
@@ -23,6 +28,11 @@ public class ItemElytra extends ItemArmor {
     @Override
     public int getMaterialProtection() {
         return 0;
+    }
+
+    @Override
+    public Item getRepairItem() {
+        return Item.leather;
     }
 
     public static final DamageSource flyIntoWall = DamageSource.inWall;
@@ -45,15 +55,5 @@ public class ItemElytra extends ItemArmor {
             return true;
         }
         return false;
-    }
-
-    @Override
-    @SuppressWarnings("unchecked")
-    public void addInformation(ItemStack item_stack, EntityPlayer player, java.util.List info, boolean extended_info, Slot slot) {
-        if (extended_info && item_stack.isItemDamaged()) {
-            int remaining = item_stack.getMaxDamage() - item_stack.getItemDamage();
-            int max = item_stack.getMaxDamage();
-            info.add(StatCollector.translateToLocalFormatted("item.elytra.tooltip", remaining, max));
-        }
     }
 }

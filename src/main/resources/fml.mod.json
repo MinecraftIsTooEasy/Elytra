@@ -32,7 +32,7 @@
   "mixins": [
     "elytra.mixins.json"
   ],
-  "accessWidener": "elytra.accesswidener",
+  "accessWidener": "elytra.accessWidener",
   "custom": {
   }
 }

@@ -19,18 +19,10 @@ repositories {
 }
 
 loom {
-    accessWidenerPath = file("src/main/resources/elytra.accesswidener")
+    accessWidenerPath = file("src/main/resources/elytra.accessWidener")
     mergedMinecraftJar()
     setFML(new File("A:\\MITE-Work\\libs\\FishModLoader-v3.4.2.jar"))
-    mods {
-        "HelloFML" {
-            sourceSet sourceSets.main
-        }
-    }
-
 }
-
-
 
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"

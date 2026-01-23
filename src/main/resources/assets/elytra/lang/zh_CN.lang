@@ -1,3 +1,4 @@
-death.attack.flyIntoWall=%1$s 撞壁致死
 item.elytra.name=鞘翅
-item.elytra.tooltip=耐久度: %d/%d
+item.elytra_template.name=鞘翅模板
+
+death.attack.flyIntoWall=%1$s 撞壁致死

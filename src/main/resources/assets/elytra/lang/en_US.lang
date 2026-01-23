@@ -1,3 +1,4 @@
 item.elytra.name=Elytra
+item.elytra_template.name=Elytra Template
+
 death.attack.flyIntoWall=%1$s experienced kinetic energy
-item.elytra.tooltip=Durability: %d/%d
