@@ -14,11 +14,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(EntityDragon.class)
 public class EntityDragonMixin {
 
-    @Inject(method = "onDeathUpdate", at = @At("HEAD"))
+    @Inject(method = "onDeathUpdate()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/EntityDragon;createEnderPortal(II)V", shift = At.Shift.BEFORE))
     private void elytra$dropTemplate(CallbackInfo ci) {
         EntityDragon dragon = (EntityDragon)(Object)this;
 
-        if (dragon.deathTicks == 200 && !dragon.worldObj.isRemote) {
+        if (!dragon.worldObj.isRemote && dragon.deathTicks == 200) {
             EntityItem entityItem = new EntityItem(
                     dragon.worldObj,
                     dragon.posX,
