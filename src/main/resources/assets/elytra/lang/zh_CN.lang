@@ -1,4 +1,6 @@
 item.elytra.name=鞘翅
 item.elytra_template.name=鞘翅模板
 
+item.tooltip.elytra_template=由末影龙掉落
+
 death.attack.flyIntoWall=%1$s 撞壁致死

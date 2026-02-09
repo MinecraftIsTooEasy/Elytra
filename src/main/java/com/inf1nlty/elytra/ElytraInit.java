@@ -21,10 +21,7 @@ public class ElytraInit {
         event.register("Elytra", "elytra:elytra", "elytra", ELYTRA);
 
         int templateId = IdUtil.getNextItemID();
-        ELYTRA_TEMPLATE = new Item(templateId, Material.adamantium, "elytra_template") {};
-        ELYTRA_TEMPLATE.setMaxStackSize(16);
-        ELYTRA_TEMPLATE.setCreativeTab(CreativeTabs.tabMaterials);
-
+        ELYTRA_TEMPLATE = new ItemElytraTemplate(templateId);
         event.register("Elytra", "elytra:elytra_template", "elytra_template", ELYTRA_TEMPLATE);
     }
 

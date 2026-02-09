@@ -1,4 +1,6 @@
 item.elytra.name=Elytra
 item.elytra_template.name=Elytra Template
 
+item.tooltip.elytra_template=Dropped by the Ender Dragon
+
 death.attack.flyIntoWall=%1$s experienced kinetic energy
