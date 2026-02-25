@@ -4,14 +4,11 @@
   "version": "${version}",
   "name": "Elytra",
   "icon": "assets/elytra/icon.png",
-
   "depends": {
     "minecraft": "1.6.4-mite",
-    "fishmodloader": ">=3.4.1"
+    "fishmodloader": ">=3.0.0"
   },
-
   "environment": "*",
-
   "description": "Add Elytra — functionality based on vanilla",
   "authors": [
     "Inf1nlty"
@@ -19,10 +16,9 @@
   "contributors": [
   ],
   "contact": {
-    "homepage": "https://github.com/Inf1nlty/Elytra-MITE",
-    "issues": "https://github.com/Inf1nlty/Elytra-MITE/issues"
+    "homepage": "https://github.com/MinecraftIsTooEasy/Elytra",
+    "issues": "https://github.com/MinecraftIsTooEasy/Elytra/issues"
   },
-
   "entrypoints": {
     "preLaunch": [],
     "main": [
