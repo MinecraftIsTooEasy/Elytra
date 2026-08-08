@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "elytra",
+  "id": "${id}",
   "version": "${version}",
-  "name": "Elytra",
+  "name": "${name}",
   "icon": "assets/elytra/icon.png",
   "depends": {
     "minecraft": "1.6.4-mite",
